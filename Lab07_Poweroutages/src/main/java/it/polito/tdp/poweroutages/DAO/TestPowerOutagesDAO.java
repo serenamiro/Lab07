@@ -3,7 +3,9 @@ package it.polito.tdp.poweroutages.DAO;
 import java.sql.Connection;
 
 public class TestPowerOutagesDAO {
-
+	
+	static PowerOutageDAO dao;
+	
 	public static void main(String[] args) {
 		
 		try {
@@ -11,9 +13,8 @@ public class TestPowerOutagesDAO {
 			connection.close();
 			System.out.println("Connection Test PASSED");
 			
-			PowerOutageDAO dao = new PowerOutageDAO() ;
-			
-			System.out.println(dao.getNercList()) ;
+			dao = new PowerOutageDAO() ;
+			System.out.println(dao.selecData(6)) ;
 
 		} catch (Exception e) {
 			System.err.println("Test FAILED");
